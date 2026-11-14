@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://fuhadsulaimon.vercel.app/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://fuhadsulaimon.vercel.app/images/sulaimon-fuhad.jpg</image:loc><image:title>Sulaimon Fuhad, book marketing and launch consultant</image:title></image:image>
+    <image:image><image:loc>https://fuhadsulaimon.vercel.app/images/8-01-collisions-of-time.webp</image:loc><image:title>8:01: Collisions of Time by Dixon Davis</image:title></image:image>
+  </url>
+</urlset>
