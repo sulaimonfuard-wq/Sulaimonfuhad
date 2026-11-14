@@ -170,19 +170,6 @@ footer nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}footer a{text-decoration
 .js .steps li:nth-child(2)::after{transition-delay:.15s}.js .steps li:nth-child(3)::after{transition-delay:.3s}.js .steps li:nth-child(4)::after{transition-delay:.45s}.js .steps li:nth-child(5)::after{transition-delay:.6s}.js .steps li:nth-child(6)::after{transition-delay:.75s}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.askb{position:fixed;left:1rem;bottom:1rem;z-index:60;display:flex;align-items:center;gap:.55rem;border:0;border-radius:999px;background:var(--ink);color:var(--bg);font:600 .8rem Montserrat,sans-serif;padding:.8rem 1.15rem;cursor:pointer;box-shadow:0 8px 22px rgba(27,22,18,.28);transition:transform .2s}
-.askb:hover{transform:translateY(-2px)}.askb span{width:.6rem;height:.6rem;border-radius:50%;background:var(--or)}
-.askp{position:fixed;left:1rem;bottom:4.6rem;z-index:61;width:min(380px,calc(100vw - 2rem));height:min(540px,calc(100svh - 6.5rem));display:none;flex-direction:column;background:var(--bg);border:2px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(27,22,18,.3)}.askp.open{display:flex}
-.ah{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;background:var(--or);color:var(--ink);font-family:Inter,sans-serif}
-.ax{border:0;background:none;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--ink)}
-.al{flex:1;overflow:auto;padding:1rem;display:flex;flex-direction:column;gap:.6rem}
-.am{max-width:86%;padding:.6rem .85rem;border-radius:16px;font-size:.9rem;line-height:1.5;white-space:pre-wrap}
-.am.b{background:var(--bg2);border-bottom-left-radius:4px;align-self:flex-start}.am.u{background:var(--or);border-bottom-right-radius:4px;align-self:flex-end;font-weight:500}
-.ac{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1rem .7rem}.ac button{border:1.5px solid var(--ink);background:none;border-radius:99px;padding:.3rem .75rem;font:500 .78rem Montserrat,sans-serif;cursor:pointer;color:var(--ink)}.ac button:hover{background:rgba(242,107,29,.18)}
-.af{display:flex;gap:.5rem;padding:.7rem 1rem;border-top:1px solid var(--line);margin:0;max-width:none}
-.af input{flex:1;border-radius:99px;padding:.6rem 1rem;font-size:.9rem}.af button{flex:none;width:2.6rem;height:2.6rem;border:0;border-radius:50%;background:var(--ink);color:var(--bg);font-size:1.2rem;cursor:pointer}
-.an{padding:0 1rem .8rem;font-size:.72rem;color:var(--mute)}.an a{text-decoration:underline}
-@media(max-width:480px){.askb{padding:.75rem .95rem}}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -340,7 +327,6 @@ footer nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}footer a{text-decoration
   <div class="in2"><span>© 2026 Sulaimon Fuhad · Book marketing &amp; launch consultant</span>
   <nav aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/in/sulaimon-fuhad-93ab93385/" rel="me noopener" target="_blank">LinkedIn</a></nav></div>
 </footer>
-<button class="askb" id="askb" type="button" aria-haspopup="dialog" aria-expanded="false"><span></span>Ask a question</button>
 <div class="stk" id="stk"><a class="cbtn" href="#contact">Plan my launch</a></div>
 <script>
 (function(){
@@ -386,41 +372,6 @@ var keyed=CFG.key&&CFG.key.indexOf("YOUR_")!==0;
 .then(function(){f.reset();say("ok","Thank you. I’ve received your message and will reply by email.")})
 .catch(function(){if(mail(d))say("ok","Opening your email app so you can send your message…");else say("err","Sorry, that didn’t send. Please <a href=\""+LI+"\" rel=\"me noopener\" target=\"_blank\">message me on LinkedIn</a> instead.")})
 .then(function(){b.disabled=false;b.textContent="Send my enquiry"})})})();
-</script>
-<script>
-(function(){
-var btn=document.getElementById("askb");if(!btn)return;
-var KB=[
-{k:["service", "offer", "provide", "what do you do", "help with", "help me"],a:"Sulaimon offers six services: Author & Book Positioning, Book Marketing & Promotion, Book Launch Strategy, Digital Strategy, Author Websites and Book Landing Pages. You can read the details in the Services section."},
-{k:["audit", "assess", "positioning", "position"],a:"A book positioning audit is a written review of how your book is positioned: its description, audience and the message readers see first, with practical changes to make first. Authors who received one have shared positive feedback. You can request one through the contact form."},
-{k:["start", "begin", "contact", "hire", "work with", "call", "reach", "email", "get in touch", "talk", "book a"],a:"The easiest way to start is the contact form on this page. Tell Sulaimon about your book, where you are in the process and what you want to achieve. He reviews each message and replies by email. You can also message him on LinkedIn."},
-{k:["website", "site", "landing", "web page", "web design"],a:"Yes. Author websites bring your bio, books, media and links together in one place, and book landing pages are focused pages for one book, launch or campaign with a clear next step for readers."},
-{k:["launch", "when", "how early", "before publication", "timeline", "how long"],a:"Ideally you plan your launch before publication, so there is time to build positioning and anticipation. If your book is already out, a positioning review can still help. For specific timelines, please use the contact form."},
-{k:["price", "pricing", "cost", "quote", "how much", "fee", "rate", "charge", "afford", "budget"],a:"I don't have pricing details. The best way to get a quote is the contact form: tell Sulaimon about your book and goals and he will reply by email."},
-{k:["who", "about", "sulaimon", "experience", "background", "yourself"],a:"Sulaimon Fuhad is a book marketing and launch consultant. He combines positioning, launch strategy and promotion with website strategy, UX, WordPress and conversion-focused design."},
-{k:["process", "steps", "how it works", "how does it work", "approach", "method"],a:"The path has six steps: strategy, positioning, launch, promotion, discovery and action. The aim is a clear route from your book to the readers you want to reach."},
-{k:["testimonial", "client", "proof", "result", "trust", "recommend", "feedback", "reference"],a:"Author Dixon Davis recommended Sulaimon for his initiative, analytical thinking and accountability, and authors who received the positioning audit shared positive feedback. See the Trusted by authors section."},
-{k:["edit", "editing", "format", "formatting", "proofread", "ghostwrite", "publish", "publishing"],a:"Editing, formatting and publishing aren't part of the services listed on this site. The focus is book marketing, launch strategy and author websites."},
-{k:["hi", "hello", "hey", "good morning", "good afternoon"],a:"Hello! Ask me about Sulaimon's services, the book positioning audit, or how to get started."}
-];
-var panel,log,input,hist=[],busy=false;
-function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
-function add(w,t){var m=el("div","am "+w,t);log.appendChild(m);log.scrollTop=log.scrollHeight;return m}
-function local(q){q=" "+q.toLowerCase().replace(/[^a-z0-9 ]/g," ")+" ";var best=null,bs=0;KB.forEach(function(k){var s=0;k.k.forEach(function(w){if(w.length<=3?q.indexOf(" "+w+" ")>-1:q.indexOf(" "+w)>-1)s++});if(s>bs){bs=s;best=k}});return best?best.a:"I'm not sure about that one. The quickest way to get an answer is the contact form on this page, or you can message Sulaimon on LinkedIn."}
-function ask(q){q=q.trim();if(!q||busy)return;add("u",q);hist.push({role:"user",content:q});busy=true;var w=add("b","…");
-fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:hist.slice(-8)})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){if(!j.reply)throw 0;return j.reply}).catch(function(){return local(q)}).then(function(a){w.textContent=a;hist.push({role:"assistant",content:a});busy=false;log.scrollTop=log.scrollHeight})}
-function toggle(o){panel.classList.toggle("open",o);btn.setAttribute("aria-expanded",o);if(o)input.focus();else btn.focus()}
-function build(){panel=el("div","askp");panel.setAttribute("role","dialog");panel.setAttribute("aria-label","Ask a question");
-panel.innerHTML='<div class="ah"><b>Ask about my services</b><button type="button" class="ax" aria-label="Close chat">\u00d7</button></div><div class="al" aria-live="polite"></div><div class="ac"></div><form class="af"><input type="text" maxlength="300" placeholder="Type your question" aria-label="Your question" autocomplete="off"><button type="submit" aria-label="Send">\u2191</button></form><p class="an">Automated assistant. For anything specific, use the <a href="#contact">contact form</a>.</p>';
-document.body.appendChild(panel);log=panel.querySelector(".al");input=panel.querySelector("input");
-panel.querySelector(".ax").onclick=function(){toggle(false)};
-panel.querySelector(".an a").onclick=function(){toggle(false)};
-panel.querySelector("form").onsubmit=function(e){e.preventDefault();var v=input.value;input.value="";ask(v)};
-var ch=panel.querySelector(".ac");["What services do you offer?","What is a book positioning audit?","How do I get started?","Do you build author websites?"].forEach(function(t){var b=el("button","",t);b.type="button";b.onclick=function(){ask(t)};ch.appendChild(b)});
-add("b","Hi! I\u2019m the website\u2019s automated assistant. Ask me about Sulaimon\u2019s services, the book positioning audit, or how to get started.");
-panel.addEventListener("keydown",function(e){if(e.key==="Escape")toggle(false)})}
-btn.addEventListener("click",function(){if(!panel)build();toggle(!panel.classList.contains("open"))});
-})();
 </script>
 </body>
 </html>
